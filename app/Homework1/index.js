@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Radium from 'radium'
 import color from 'color'
+
 import postData from './postData.js'
+import Table from './Table.js'
 
 /*
    Homework 1: Rendering Data
@@ -18,8 +20,20 @@ import postData from './postData.js'
 */
 
 const Homework1 = () => {
+  const headers = {
+    userId: "User Id",
+    id: "Record Id",
+    title: "Title",
+    body: "Body",
+  };
+
+  const style = {
+    border: '3px solid #bb8855'
+  };
+
   return (
     <div>
+      <Table headers={headers} data={postData.sort(e => e.title)} />
     </div>
   )
 }
